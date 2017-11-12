@@ -6,10 +6,24 @@ namespace exercise02_counting_the_number_of_characters
     {
         static void Main(string[] args)
         {
+            StartProcess();
+        }
+
+        private static void StartProcess()
+        {
             Write("What is the input string? ");
             var input = ReadLine();
-            WriteLine($"{input} has {input.Length} characters.");
-            ReadLine();
+
+            if (input.Length == 0)
+            {
+                WriteLine("User must enter something into the program.");
+                StartProcess();
+            }
+            else
+            {
+                WriteLine($"{input} has {input.Length} characters.");
+                ReadLine();
+            }
         }
     }
 }
